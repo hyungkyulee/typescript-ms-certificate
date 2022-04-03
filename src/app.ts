@@ -19,15 +19,24 @@
 //     return items; 
 // } 
 
+// function addClick(items: any[]) {
+//     for (var i = 0; i < items.length; i++) {
+//         items[i].onClick = (function (i) { 
+//             return function () {
+//                 return i; 
+//             };
+//         }(i));
+//     }
+//     return items;
+// }
+
 function addClick(items: any[]) {
-    for (var i = 0; i < items.length; i++) {
-        items[i].onClick = (function (i) { 
-            return function () {
-                return i; 
-            };
-        }(i));
+    for (let i = 0; i < items.length; i++) {
+        items[i].onClick = function () { 
+            return i; 
+        }; 
     }
-    return items;
+    return items; 
 }
 
 const example = [{}, {}]
